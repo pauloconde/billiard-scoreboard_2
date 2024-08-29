@@ -1,4 +1,4 @@
-import { Button, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 import Dialog from 'react-native-dialog';
 
@@ -44,9 +44,12 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
     },
     button: {
+      
         backgroundColor: '#dddddd70',
         padding: 20,
         margin: 10,
         borderRadius: 20,
+        minWidth: 250,
+        alignItems: 'center',
     },
 });
