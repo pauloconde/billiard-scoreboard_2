@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, StatusBar } from 'react-native';
 import { PlayerText } from './components/PlayerText';
 import { PlayerPoints } from './components/PlayerPoints';
 import { EntradasCount } from './components/EntradasCount';
 import ResetButton from './components/ResetButton';
 import InfoButton from './components/InfoButton';
 import { ScaledSheet } from 'react-native-size-matters';
+import * as NavigationBar from 'expo-navigation-bar';
 
 export default function App() {
   const [playerPointsA, setPlayerPointsA] = useState(0);
@@ -20,6 +21,15 @@ export default function App() {
       setCanReset(false);
     }
   }, [playerPointsA, playerPointsB, entradasCount]);
+
+  useEffect(() => {
+    // Ocultar la barra de estado
+    StatusBar.setHidden(true);
+
+    // Configurar la barra de navegación para ocultarla
+    NavigationBar.setVisibilityAsync('hidden');
+    NavigationBar.setBehaviorAsync('overlay-swipe'); // Permite que la barra de navegación se muestre con un swipe si es necesario
+  }, []);
 
   const resetAll = () => {
     setPlayerPointsA(0);

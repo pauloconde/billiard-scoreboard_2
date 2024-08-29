@@ -21,7 +21,16 @@
         "backgroundColor": "#ffffff"
       },
       "package": "com.condepaulo.billiardscoreboard",
-      "userInterfaceStyle": "light"
+      "userInterfaceStyle": "light",
+      "statusBar": {
+        "hidden": true,
+        "translucent": true
+      },
+      "navigationBar": {
+        "visible": "leanback",
+        "barStyle": "light-content",
+        "backgroundColor": "#00000000"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -31,7 +40,7 @@
         "projectId": "13226fee-7083-4c3c-be2c-8207fbcc7c8d"
       }
     },
-    "plugins":[
+    "plugins": [
       "./plugins/withDisableForcedDarkModeAndroid.js"
     ]
   }
