@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import MinusIcon from './MinusIcon';
+import { ScaledSheet, scale } from 'react-native-size-matters';
 
 export function EntradasCount({ count, setCount }) {
   const incrementCount = () => {
@@ -24,32 +25,32 @@ export function EntradasCount({ count, setCount }) {
   );
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   container: {
     position: 'absolute',
     top: 0,
     left: '50%',
-    transform: [{ translateX: -60 }],
-    width: 120,
+    transform: [{ translateX: scale(-60) }],
+    width: '120@s',
     backgroundColor: '#dddddd',
     alignItems: 'center',
-    borderBottomLeftRadius: 10, // Radio inferior izquierdo
-    borderBottomRightRadius: 10, // Radio inferior derecho
-    paddingBottom: 10,
-    paddingTop: 10, // Añadir algo de padding para espacio adicional
+    borderBottomLeftRadius: '16@s', // Radio inferior izquierdo
+    borderBottomRightRadius: '16@s', // Radio inferior derecho
+    paddingBottom: '10@vs',
+    paddingTop: '10@vs', // Añadir algo de padding para espacio adicional
   },
   touchable: {
     width: '100%',
     alignItems: 'center',
   },
   title: {
-    fontSize: 16,
+    fontSize: '16@s',
     fontWeight: '600',
     marginBottom: 0,
   },
   countText: {
-    fontSize: 80,
+    fontSize: '85@s',
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: '5@vs',
   },
 });

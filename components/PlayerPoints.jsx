@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import MinusIcon from './MinusIcon';
+import { ScaledSheet } from 'react-native-size-matters';
 
 
 export function PlayerPoints({ points, setPoints }) {
@@ -25,13 +26,13 @@ export function PlayerPoints({ points, setPoints }) {
     );
 }
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
     container: {
         alignItems: 'center',
         marginTop: 0,
     },
     pointsText: {
-        fontSize: 180,
+        fontSize: '180@s',
         fontWeight: '900',
         marginBottom: 0,
     },
