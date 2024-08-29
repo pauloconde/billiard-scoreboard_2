@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, View, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 import Dialog from 'react-native-dialog';
 import { PlayerText } from './components/PlayerText';
 import { PlayerPoints } from './components/PlayerPoints';
 import { EntradasCount } from './components/EntradasCount';
 import ResetIcon from './components/ResetIcon';
+import InfoIcon from './components/InfoIcon';  // Asegúrate de tener este componente
 
 export default function App() {
   const [playerPointsA, setPlayerPointsA] = useState(0);
   const [playerPointsB, setPlayerPointsB] = useState(0);
   const [entradasCount, setEntradasCount] = useState(0);
   const [isDialogVisible, setDialogVisible] = useState(false);
+  const [isInfoDialogVisible, setInfoDialogVisible] = useState(false); // Estado para el diálogo de información
   const [canReset, setCanReset] = useState(false); // Controla si el botón de reiniciar está habilitado
 
   useEffect(() => {
@@ -39,6 +41,14 @@ export default function App() {
     setDialogVisible(false); // Cierra el diálogo sin hacer nada
   };
 
+  const showInfoDialog = () => {
+    setInfoDialogVisible(true); // Muestra el diálogo de información
+  };
+
+  const handleInfoCancel = () => {
+    setInfoDialogVisible(false); // Cierra el diálogo de información
+  };
+
   return (
     <View style={styles.pantalla}>
       <View style={styles.marcadorizquierdo}>
@@ -57,6 +67,10 @@ export default function App() {
         </TouchableOpacity>
       </View>
 
+      <TouchableOpacity style={styles.infoIconContainer} onPress={showInfoDialog}>
+        <InfoIcon color={'#777777'}/>
+      </TouchableOpacity>
+
       {/* Diálogo de confirmación */}
       <Dialog.Container visible={isDialogVisible}>
         <Dialog.Title>Confirmar Reinicio</Dialog.Title>
@@ -65,6 +79,18 @@ export default function App() {
         </Dialog.Description>
         <Dialog.Button label="Cancelar" onPress={handleCancel} />
         <Dialog.Button label="Reiniciar" onPress={resetAll} />
+      </Dialog.Container>
+
+      {/* Diálogo de información */}
+      <Dialog.Container visible={isInfoDialogVisible}>
+        <Dialog.Title>Desarrollado por:</Dialog.Title>
+        <Dialog.Description>
+          Paulo Conde{'\n'}
+          pauloconde@gmail.com{'\n'}
+          Tel: +58 (414) 7494763{'\n'}
+          Barinas, Venezuela.
+        </Dialog.Description>
+        <Dialog.Button label="Cerrar" onPress={handleInfoCancel} />
       </Dialog.Container>
     </View>
   );
@@ -98,5 +124,10 @@ const styles = StyleSheet.create({
     transform: [{ translateX: -50 }],
     width: 100,
     alignItems: 'center',
+  },
+  infoIconContainer: {
+    position: 'absolute',
+    bottom: 20,
+    right: 20, // Posiciona el icono en la esquina inferior derecha
   },
 });
