@@ -12,14 +12,16 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "userInterfaceStyle": "light"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.condepaulo.billiardscoreboard"
+      "package": "com.condepaulo.billiardscoreboard",
+      "userInterfaceStyle": "light"
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -28,6 +30,9 @@
       "eas": {
         "projectId": "13226fee-7083-4c3c-be2c-8207fbcc7c8d"
       }
-    }
+    },
+    "plugins":[
+      "./plugins/withDisableForcedDarkModeAndroid.js"
+    ]
   }
 }
