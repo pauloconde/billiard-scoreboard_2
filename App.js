@@ -6,10 +6,10 @@ export default function App() {
   return (
     <View style={styles.pantalla}>
       <View style={styles.marcadorizquierdo}>
-        <PlayerText>Jugador A</PlayerText>
+        <PlayerText playerName={'Jugador AA'}></PlayerText>
       </View>
       <View style={styles.marcadorderecho}>
-        <PlayerText>Jugador B</PlayerText>
+        <PlayerText playerName={'Jugador BB'}></PlayerText>
       </View>
     </View>
   );
