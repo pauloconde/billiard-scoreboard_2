@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Button, StyleSheet } from 'react-native';
 import MinusIcon from './MinusIcon';
 import { ScaledSheet, scale } from 'react-native-size-matters';
 
-export function EntradasCount({ count, setCount }) {
+export function EntriesCount({ count, setCount }) {
   const incrementCount = () => {
     setCount(count + 1);
   };

@@ -49,7 +49,7 @@ const styles = ScaledSheet.create({
     padding: '10@s',
     marginTop: '20@s',
     borderRadius: '2@s',
-    minWidth: '230@s',
+    minWidth: '265@s',
     alignItems: 'center',
   },
   dialogContainer: {
