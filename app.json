@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "billiard-scoreboard",
+    "name": "Billiard Scoreboard",
     "slug": "billiard-scoreboard",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "landscape",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
